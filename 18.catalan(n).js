@@ -12,4 +12,9 @@ const catalan = (n) => {
     return fact(2 * n) / (fact(n+1) * fact(n))
 }
 
-console.log(catalan(8))
+const n = 9
+
+
+for(let i = 0; i < n; i++) {
+    console.log(catalan(i))
+}
