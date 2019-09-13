@@ -1,6 +1,6 @@
 const changeLog = ( x, y ) => Math.log( x ) / Math.log( y )
 
-let logBase = 13
+let logBase = 7
 
 console.log('Logaritmo Base Global')
 

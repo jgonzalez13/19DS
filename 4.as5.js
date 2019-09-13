@@ -1,5 +1,5 @@
 const n = 10
-const k = 4
+const k = 2
 let temp = 0
 let form
 
