@@ -13,7 +13,7 @@ class Vector {
 
   subt(vector) {
     if (this.data.length !== vector.length) {
-      return console.log("//ERROR: No se pueden SUMAR los vectores");
+      return console.log("//ERROR: No se pueden RESTAR los vectores");
     }
 
     return this.data.map((item, i) => item - vector[i]);
@@ -21,7 +21,7 @@ class Vector {
 
   mul(vector) {
     if (this.data.length !== vector.length) {
-      return console.log("//ERROR: No se pueden SUMAR los vectores");
+      return console.log("//ERROR: No se pueden MULTIPLICAR los vectores");
     }
 
     return this.data.map((item, i) => item * vector[i]);
@@ -45,8 +45,15 @@ class Vector {
 
   const vector = new Vector(a);
 
+  c("----- sum(b) -----");
   c(vector.sum(b));
+
+  c("----- subt(b) -----");
   c(vector.subt(b));
+
+  c("----- mul(b) -----");
   c(vector.mul(b));
+
+  c("----- getVector() -----");
   c(vector.getVector());
 })(console.log);
