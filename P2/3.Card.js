@@ -11,7 +11,7 @@ class Card {
   }
 }
 
-(function(c) {
+(function useCard(c) {
   c("|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|");
   c("|                                 |");
   c("|---------- TEST - Card ----------|");
