@@ -33,7 +33,7 @@ class Matrix {
 
   getRow(r) {
     if (r > this.row) {
-      return console.log("//ERROR: Fila fuera del rango de la Matrix");
+      return console.log('//ERROR: Fila fuera del rango de la Matrix');
     }
 
     return this.data[r];
@@ -43,7 +43,7 @@ class Matrix {
     const temp = [];
 
     if (c > this.columns) {
-      return console.log("//ERROR: Fila fuera del rango de la Matrix");
+      return console.log('//ERROR: Fila fuera del rango de la Matrix');
     }
 
     for (let i = 0; i < this.row; i++) {
@@ -93,34 +93,34 @@ class Matrix {
 }
 
 (function useMatrix(c) {
-  c("|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|");
-  c("|                                   |");
-  c("|---------- TEST - Matrix ----------|");
-  c("|                                   |");
-  c("|___________________________________|\n");
+  c('|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|');
+  c('|                                   |');
+  c('|---------- TEST - Matrix ----------|');
+  c('|                                   |');
+  c('|___________________________________|\n');
 
   // !  Test - Matrix ( Randow )
 
   const matrix = new Matrix(4, 3);
-  c("\n//---------- Matrix Randow ----------//\n");
+  c('\n//---------- Matrix Randow ----------//\n');
   c(matrix.getMatrix());
 
-  c("----- initRandow() -----");
+  c('----- initRandow() -----');
   c(matrix.initRandom());
 
-  c("----- getRow(2) -----");
+  c('----- getRow(2) -----');
   c(matrix.getRow(2));
 
-  c("----- getColumn(2) -----");
+  c('----- getColumn(2) -----');
   c(matrix.getColumn(2));
 
-  c("----- isSquared() -----");
+  c('----- isSquared() -----');
   c(matrix.isSquared());
 
-  c("----- isSymmetric() -----");
+  c('----- isSymmetric() -----');
   c(matrix.isSymmetric());
 
-  c("----- isIdentity() -----");
+  c('----- isIdentity() -----');
   c(matrix.isIdentity());
 
   // ! Test - Matrix ( Identity )
@@ -131,15 +131,15 @@ class Matrix {
     matrixI.data[i][i] = 1;
   }
 
-  c("\n//---------- Matrix Identity ----------//\n");
+  c('\n//---------- Matrix Identity ----------//\n');
   c(matrixI.getMatrix());
 
-  c("----- isSquared() -----");
+  c('----- isSquared() -----');
   c(matrixI.isSquared());
 
-  c("----- isSymmetric() -----");
+  c('----- isSymmetric() -----');
   c(matrixI.isSymmetric());
 
-  c("----- isIdentity() -----");
+  c('----- isIdentity() -----');
   c(matrixI.isIdentity());
 })(console.log);

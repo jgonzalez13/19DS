@@ -31,24 +31,24 @@ class Factorial {
 }
 
 (function useFactorial(c) {
-  c("|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|");
-  c("|                                      |");
-  c("|---------- TEST - Factorial ----------|");
-  c("|                                      |");
-  c("|______________________________________|\n");
+  c('|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|');
+  c('|                                      |');
+  c('|---------- TEST - Factorial ----------|');
+  c('|                                      |');
+  c('|______________________________________|\n');
 
-  c("\n//---------- Factorial - 5 ----------//\n");
+  c('\n//---------- Factorial - 5 ----------//\n');
   const factorial = new Factorial(5);
 
-  c("----- value() -----");
+  c('----- value() -----');
   c(factorial.value());
 
-  c("----- cost() -----");
+  c('----- cost() -----');
   c(factorial.cost());
 
-  c("----- succession() -----");
+  c('----- succession() -----');
   c(factorial.succession());
 
-  c("----- table() -----");
+  c('----- table() -----');
   c(factorial.table());
 })(console.log);

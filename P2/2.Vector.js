@@ -5,7 +5,7 @@ class Vector {
 
   sum(vector) {
     if (this.data.length !== vector.length) {
-      return console.log("//ERROR: No se pueden SUMAR los vectores");
+      return console.log('//ERROR: No se pueden SUMAR los vectores');
     }
 
     return this.data.map((item, i) => item + vector[i]);
@@ -13,7 +13,7 @@ class Vector {
 
   subt(vector) {
     if (this.data.length !== vector.length) {
-      return console.log("//ERROR: No se pueden RESTAR los vectores");
+      return console.log('//ERROR: No se pueden RESTAR los vectores');
     }
 
     return this.data.map((item, i) => item - vector[i]);
@@ -21,7 +21,7 @@ class Vector {
 
   mul(vector) {
     if (this.data.length !== vector.length) {
-      return console.log("//ERROR: No se pueden MULTIPLICAR los vectores");
+      return console.log('//ERROR: No se pueden MULTIPLICAR los vectores');
     }
 
     return this.data.map((item, i) => item * vector[i]);
@@ -37,23 +37,23 @@ class Vector {
 
   const b = [6, 5, 4, 3, 2, 1];
 
-  c("|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|");
-  c("|                                 |");
-  c("|---------- TEST - List ----------|");
-  c("|                                 |");
-  c("|_________________________________|\n");
+  c('|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|');
+  c('|                                 |');
+  c('|---------- TEST - List ----------|');
+  c('|                                 |');
+  c('|_________________________________|\n');
 
   const vector = new Vector(a);
 
-  c("----- sum(b) -----");
+  c('----- sum(b) -----');
   c(vector.sum(b));
 
-  c("----- subt(b) -----");
+  c('----- subt(b) -----');
   c(vector.subt(b));
 
-  c("----- mul(b) -----");
+  c('----- mul(b) -----');
   c(vector.mul(b));
 
-  c("----- getVector() -----");
+  c('----- getVector() -----');
   c(vector.getVector());
 })(console.log);

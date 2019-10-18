@@ -40,17 +40,17 @@ class Card {
 }
 
 (function useCard(c) {
-  c("|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|");
-  c("|                                 |");
-  c("|---------- TEST - Card ----------|");
-  c("|                                 |");
-  c("|_________________________________|\n");
+  c('|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|');
+  c('|                                 |');
+  c('|---------- TEST - Card ----------|');
+  c('|                                 |');
+  c('|_________________________________|\n');
 
   const card = new Card();
-  c("----- printCard(36) -----");
+  c('----- printCard(36) -----');
   c(card.printCard(36));
-  c("----- printNumber(10, 2) -----");
+  c('----- printNumber(10, 2) -----');
   c(card.printNumber(10, 2));
-  c("----- fourOfAKind() -----");
+  c('----- fourOfAKind() -----');
   c(card.fourOfAKind());
 })(console.log);

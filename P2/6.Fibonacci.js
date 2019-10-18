@@ -30,24 +30,24 @@ class Fibonacci {
 }
 
 (function useFibonacci(c) {
-  c("|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|");
-  c("|                                      |");
-  c("|---------- TEST - Fibonacci ----------|");
-  c("|                                      |");
-  c("|______________________________________|\n");
+  c('|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|');
+  c('|                                      |');
+  c('|---------- TEST - Fibonacci ----------|');
+  c('|                                      |');
+  c('|______________________________________|\n');
 
-  c("\n//---------- Fibonacci - 5 ----------//\n");
+  c('\n//---------- Fibonacci - 5 ----------//\n');
   const fibonacci = new Fibonacci(5);
 
-  c("----- value() -----");
+  c('----- value() -----');
   c(fibonacci.value());
 
-  c("----- cost() -----");
+  c('----- cost() -----');
   c(fibonacci.cost());
 
-  c("----- succession() -----");
+  c('----- succession() -----');
   c(fibonacci.succession());
 
-  c("----- table() -----");
+  c('----- table() -----');
   c(fibonacci.table());
 })(console.log);

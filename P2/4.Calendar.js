@@ -27,23 +27,23 @@ class Calendar {
 }
 
 (function useCalendar(c) {
-  c("|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|");
-  c("|                                     |");
-  c("|---------- TEST - Calendar ----------|");
-  c("|                                     |");
-  c("|_____________________________________|\n");
+  c('|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|');
+  c('|                                     |');
+  c('|---------- TEST - Calendar ----------|');
+  c('|                                     |');
+  c('|_____________________________________|\n');
 
   const calendar = new Calendar();
 
-  c("----- isLeapYear(2020) -----");
+  c('----- isLeapYear(2020) -----');
   c(calendar.isLeapYear(2020));
 
-  c("----- isLeapYear(2018) -----");
+  c('----- isLeapYear(2018) -----');
   c(calendar.isLeapYear(2018));
 
-  c("----- todayPlus(2, 9) -----");
+  c('----- todayPlus(2, 9) -----');
   c(calendar.todayPlus(2, 9));
 
-  c("----- firstDayYear(2019) -----");
+  c('----- firstDayYear(2019) -----');
   c(calendar.firstDayYear(2019));
 })(console.log);

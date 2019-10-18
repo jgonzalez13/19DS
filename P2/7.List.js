@@ -44,10 +44,10 @@ class List {
   }
 
   toString() {
-    let tempString = "";
+    let tempString = '';
     let tempNode = this.head;
     for (let i = 1; i <= this.length; i++) {
-      tempString += tempNode.data + " ";
+      tempString += tempNode.data + ' ';
       tempNode = tempNode.next;
     }
     return tempString;
@@ -55,38 +55,38 @@ class List {
 }
 
 (function useList(c) {
-  c("|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|");
-  c("|                                 |");
-  c("|---------- TEST - List ----------|");
-  c("|                                 |");
-  c("|_________________________________|\n");
+  c('|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|');
+  c('|                                 |');
+  c('|---------- TEST - List ----------|');
+  c('|                                 |');
+  c('|_________________________________|\n');
 
-  c("\n//---------- List ----------//\n");
+  c('\n//---------- List ----------//\n');
 
-  let node0 = new Node("node0");
-  let node1 = new Node("node1");
-  let node2 = new Node("node2");
-  let node3 = new Node("node3");
+  let node0 = new Node('node0');
+  let node1 = new Node('node1');
+  let node2 = new Node('node2');
+  let node3 = new Node('node3');
 
   let list = new List(node1);
-  c("----- toString() -----");
+  c('----- toString() -----');
   c(list.toString());
 
-  c("----- insertHead(node0) -----");
+  c('----- insertHead(node0) -----');
   list.insertHead(node0);
 
-  c("----- insertTail(node2) -----");
+  c('----- insertTail(node2) -----');
   list.insertTail(node2);
 
-  c("\n----- toString() -----\n");
+  c('\n----- toString() -----\n');
   c(list.toString());
 
-  c("\n----- deleteHead() -----");
+  c('\n----- deleteHead() -----');
   list.deleteHead();
 
-  c("----- deleteTail() -----");
+  c('----- deleteTail() -----');
   list.deleteTail();
 
-  c("\n----- toString() -----\n");
+  c('\n----- toString() -----\n');
   c(list.toString());
 })(console.log);
