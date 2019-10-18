@@ -7,32 +7,30 @@ class Node {
 
 class List {
   constructor(node) {
-    this.head = new Node(null);
-    this.head.next = node;
-    this.tail = new Node(null);
-    this.tail.next = node;
+    this.head = node;
+    this.tail = node;
     this.length = 1;
   }
 
   insertHead(node) {
-    node.next = this.head.next;
-    this.head.next = node;
+    node.next = this.head;
+    this.head = node;
     this.length++;
   }
 
   insertTail(node) {
-    this.tail.next.next = node;
     this.tail.next = node;
+    this.tail = this.tail.next;
     this.length++;
   }
 
   deleteHead() {
-    this.head.next = this.head.next.next;
+    this.head = this.head.next;
     this.length--;
   }
 
   deleteTail() {
-    let temp = this.head.next;
+    let temp = this.head;
     for (let i = 1; i < this.length - 1; i++) {
       temp = temp.next;
     }
@@ -47,7 +45,7 @@ class List {
 
   toString() {
     let tempString = "";
-    let tempNode = this.head.next;
+    let tempNode = this.head;
     for (let i = 1; i <= this.length; i++) {
       tempString += tempNode.data + " ";
       tempNode = tempNode.next;
@@ -91,6 +89,4 @@ class List {
 
   c("\n----- toString() -----\n");
   c(list.toString());
-
-  c(list);
 })(console.log);
