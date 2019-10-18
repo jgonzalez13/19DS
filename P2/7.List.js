@@ -56,18 +56,41 @@ class List {
   }
 }
 
-let node0 = new Node("node0");
-let node1 = new Node("node1");
-let node2 = new Node("node2");
-let node3 = new Node("node3");
+(function useList(c) {
+  c("|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|");
+  c("|                                 |");
+  c("|---------- TEST - List ----------|");
+  c("|                                 |");
+  c("|_________________________________|\n");
 
-let list = new List(node1);
-console.log(list.toString());
+  c("\n//---------- List ----------//\n");
 
-list.insertHead(node0);
-list.insertTail(node2);
-console.log(list.toString());
+  let node0 = new Node("node0");
+  let node1 = new Node("node1");
+  let node2 = new Node("node2");
+  let node3 = new Node("node3");
 
-list.deleteHead();
-list.deleteTail();
-console.log(list.toString());
+  let list = new List(node1);
+  c("----- toString() -----");
+  c(list.toString());
+
+  c("----- insertHead(node0) -----");
+  list.insertHead(node0);
+
+  c("----- insertTail(node2) -----");
+  list.insertTail(node2);
+
+  c("\n----- toString() -----\n");
+  c(list.toString());
+
+  c("\n----- deleteHead() -----");
+  list.deleteHead();
+
+  c("----- deleteTail() -----");
+  list.deleteTail();
+
+  c("\n----- toString() -----\n");
+  c(list.toString());
+
+  c(list);
+})(console.log);
