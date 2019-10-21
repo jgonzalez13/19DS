@@ -63,12 +63,12 @@ class List {
 
   c('\n//---------- List ----------//\n');
 
-  let node0 = new Node('node0');
-  let node1 = new Node('node1');
-  let node2 = new Node('node2');
-  let node3 = new Node('node3');
+  const node0 = new Node('node0');
+  const node1 = new Node('node1');
+  const node2 = new Node('node2');
+  const node3 = new Node('node3');
 
-  let list = new List(node1);
+  const list = new List(node1);
   c('----- toString() -----');
   c(list.toString());
 
