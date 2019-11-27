@@ -1,3 +1,7 @@
+/*
+  ubbTree Class//unsorted, binary, balanced
+*/
+
 class Node {
   constructor(data) {
     this.data = data;
@@ -11,58 +15,42 @@ class TreeUBB {
     this.node = node;
   }
 
-  findMinNode(node) {
-    if (node.left === null) {
-      return node;
-    } else {
-      return this.findMinNode(node.left);
-    }
-  }
-
   insert(n, node = this.node) {
     if (!node.left) {
       node.left = n;
+      return node;
     } else if (!node.right) {
       node.right = n;
+      return node;
     } else if (node.right && !node.left.right) {
-      this.insert(n, node.left);
+      return this.insert(n, node.left);
     } else if (node.left && !node.right.left) {
-      this.insert(n, node.right);
+      return this.insert(n, node.right);
     } else if (node.right && !node.right.right) {
-      this.insert(n, node.right);
+      return this.insert(n, node.right);
     } else {
-      this.insert(n, node.left);
+      return this.insert(n, node.left);
     }
-    return;
   }
 
   removeNode(key, node = this.node) {
-    if (node === null) {
+    if (node == null) {
       return null;
-    } else if (key < node.data) {
-      node.left = this.removeNode(key, node.left);
+    }
+    if (node.left.data === key) {
+      node.left = null;
       return node;
-    } else if (key > node.data) {
-      node.right = this.removeNode(key, node.right);
+    } else if (node.right.data === key) {
+      node.right = null;
       return node;
+    } else if (node.right && !node.left.right) {
+      return this.removeNode(key, node.left);
+    } else if (node.left && !node.right.left) {
+      return this.removeNode(key, node.right);
+    } else if (node.right && !node.right.right) {
+      return this.removeNode(key, node.right);
     } else {
-      if (node.left === null && node.right === null) {
-        node = null;
-        return node;
-      }
-      if (node.left === null) {
-        node = node.right;
-        return node;
-      } else if (node.right === null) {
-        node = node.left;
-        return node;
-      }
-
-      var aux = this.findMinNode(node.right);
-      node.data = aux.data;
-
-      node.right = this.removeNode(aux.data, node.right);
-      return node;
+      return this.removeNode(key, node.left);
     }
   }
 
@@ -136,6 +124,9 @@ tree.insert(child9);
 
 console.log('BTF');
 console.log(tree.bft());
+
+console.log('preOrden');
+tree.preOrder();
 
 tree.removeNode(2);
 

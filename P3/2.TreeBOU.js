@@ -15,57 +15,34 @@ class TreeBOU {
     this.node = node;
   }
 
-  findMinNode(node) {
-    if (node.left === null) {
-      return node;
-    } else {
-      return this.findMinNode(node.left);
-    }
-  }
-
   insert(n, node = this.node) {
     if (n.data < node.data && node.left === null) {
       node.left = n;
-      return;
+      return node;
     } else if (n.data > node.data && node.right === null) {
       node.right = n;
-      return;
+      return node;
     } else if (n.data < node.data && node.left) {
-      this.insert(n, node.left);
+      return this.insert(n, node.left);
     } else if (n.data > node.data && node.right) {
-      this.insert(n, node.right);
+      return this.insert(n, node.right);
     }
-
-    return;
   }
 
-  removeNode(key, node = this.node) {
-    if (node === null) {
+  remove(key, node = this.node) {
+    if (node == null) {
       return null;
-    } else if (key < node.data) {
-      node.left = this.removeNode(key, node.left);
+    }
+    if (node.left.data === key) {
+      node.left = null;
       return node;
-    } else if (key > node.data) {
-      node.right = this.removeNode(key, node.right);
+    } else if (node.right.data === key) {
+      node.right = null;
       return node;
-    } else {
-      if (node.left === null && node.right === null) {
-        node = null;
-        return node;
-      }
-      if (node.left === null) {
-        node = node.right;
-        return node;
-      } else if (node.right === null) {
-        node = node.left;
-        return node;
-      }
-
-      var aux = this.findMinNode(node.right);
-      node.data = aux.data;
-
-      node.right = this.removeNode(aux.data, node.right);
-      return node;
+    } else if (key < node.data && node.left) {
+      return this.remove(n, node.left);
+    } else if (key > node.data && node.right) {
+      return this.remove(n, node.right);
     }
   }
 
@@ -121,7 +98,7 @@ tree.insert(child3);
 console.log('BTF');
 console.log(tree.bft());
 
-tree.removeNode(2);
+tree.remove(2);
 
 console.log('preOrden');
 tree.preOrder();
