@@ -33,7 +33,7 @@ class TreeUBB {
     }
   }
 
-  removeNode(key, node = this.node) {
+  remove(key, node = this.node) {
     if (node == null) {
       return null;
     }
@@ -44,13 +44,13 @@ class TreeUBB {
       node.right = null;
       return node;
     } else if (node.right && !node.left.right) {
-      return this.removeNode(key, node.left);
+      return this.remove(key, node.left);
     } else if (node.left && !node.right.left) {
-      return this.removeNode(key, node.right);
+      return this.remove(key, node.right);
     } else if (node.right && !node.right.right) {
-      return this.removeNode(key, node.right);
+      return this.remove(key, node.right);
     } else {
-      return this.removeNode(key, node.left);
+      return this.remove(key, node.left);
     }
   }
 
@@ -128,7 +128,7 @@ console.log(tree.bft());
 console.log('preOrden');
 tree.preOrder();
 
-tree.removeNode(2);
+tree.remove(2);
 
 console.log('preOrden');
 tree.preOrder();
