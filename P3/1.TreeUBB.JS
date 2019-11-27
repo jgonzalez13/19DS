@@ -1,7 +1,3 @@
-/*
-  uobTree Class//unbalanced, ordered, binary
-*/
-
 class Node {
   constructor(data) {
     this.data = data;
@@ -10,7 +6,7 @@ class Node {
   }
 }
 
-class TreeBOU {
+class TreeUBB {
   constructor(node) {
     this.node = node;
   }
@@ -24,18 +20,19 @@ class TreeBOU {
   }
 
   insert(n, node = this.node) {
-    if (n.data < node.data && node.left === null) {
+    if (!node.left) {
       node.left = n;
-      return;
-    } else if (n.data > node.data && node.right === null) {
+    } else if (!node.right) {
       node.right = n;
-      return;
-    } else if (n.data < node.data && node.left) {
+    } else if (node.right && !node.left.right) {
       this.insert(n, node.left);
-    } else if (n.data > node.data && node.right) {
+    } else if (node.left && !node.right.left) {
       this.insert(n, node.right);
+    } else if (node.right && !node.right.right) {
+      this.insert(n, node.right);
+    } else {
+      this.insert(n, node.left);
     }
-
     return;
   }
 
@@ -104,19 +101,38 @@ class TreeBOU {
     }
   }
 }
-const papa = new Node(5);
+
+const papa = new Node(1);
 
 const child1 = new Node(2);
-const child2 = new Node(10);
-const child3 = new Node(7);
+const child2 = new Node(3);
+const child3 = new Node(4);
+const child4 = new Node(5);
+const child5 = new Node(6);
+const child6 = new Node(7);
+const child7 = new Node(8);
+const child8 = new Node(9);
+const child9 = new Node(10);
 
-const tree = new TreeBOU(papa);
+const tree = new TreeUBB(papa);
 
 tree.insert(child1);
 
 tree.insert(child2);
 
 tree.insert(child3);
+
+tree.insert(child4);
+
+tree.insert(child5);
+
+tree.insert(child6);
+
+tree.insert(child7);
+
+tree.insert(child8);
+
+tree.insert(child9);
 
 console.log('BTF');
 console.log(tree.bft());
