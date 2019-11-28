@@ -81,26 +81,34 @@ class TreeBOU {
     }
   }
 }
-const papa = new Node(5);
 
-const child1 = new Node(2);
-const child2 = new Node(10);
-const child3 = new Node(7);
+(function useTreeBOU(c) {
+  const papa = new Node(5);
 
-const tree = new TreeBOU(papa);
+  const child1 = new Node(2);
+  const child2 = new Node(10);
+  const child3 = new Node(7);
 
-tree.insert(child1);
+  const tree = new TreeBOU(papa);
 
-tree.insert(child2);
+  c('insert - 2');
+  tree.insert(child1);
 
-tree.insert(child3);
+  c('inser - 10');
+  tree.insert(child2);
 
-console.log('BTF');
-console.log(tree.bft());
+  c('insert - 7');
+  tree.insert(child3);
 
-tree.remove(2);
+  c('BTF');
+  c(tree.bft());
 
-console.log('preOrden');
-tree.preOrder();
+  c('preOrden');
+  tree.preOrder();
 
-tree;
+  c('remove - 2');
+  tree.remove(2);
+
+  c('print');
+  c(tree);
+})(console.log);

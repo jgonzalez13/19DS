@@ -124,65 +124,68 @@ class Graph {
     return true;
   }
 }
-graph2 = new Graph(2);
-graph3 = new Graph(3);
-graph4 = new Graph(4);
 
-graph2.addEdege(0, 1, true);
+(function useGraph(c) {
+  graph2 = new Graph(2);
+  graph3 = new Graph(3);
+  graph4 = new Graph(4);
 
-graph3.addEdege(2, 0, true);
-graph3.addEdege(1, 0, true);
-graph3.addEdege(2, 1, true);
+  graph2.addEdege(0, 1, true);
 
-graph4.addEdege(1, 0, true);
-graph4.addEdege(0, 0);
-console.log(' Create Graph');
-graph1 = new Graph(5);
-console.log(graph1.printGraph());
-console.log(' ');
+  graph3.addEdege(2, 0, true);
+  graph3.addEdege(1, 0, true);
+  graph3.addEdege(2, 1, true);
 
-console.log('addVertex');
-graph1.addVertex();
-console.log(graph1.printGraph());
-console.log(' ');
+  graph4.addEdege(1, 0, true);
+  graph4.addEdege(0, 0);
+  c(' Create Graph');
+  graph1 = new Graph(5);
+  c(graph1.printGraph());
+  c(' ');
 
-console.log('addEdges');
-graph1.addEdege(1, 0, true);
-graph1.addEdege(2, 0, true);
-console.log(graph1.printGraph());
-console.log(' ');
+  c('addVertex');
+  graph1.addVertex();
+  c(graph1.printGraph());
+  c(' ');
 
-console.log('isComplete (Boolean-False)');
-console.log(graph1.printGraph());
-console.log(graph1.isComplete());
-console.log(' ');
+  c('addEdges');
+  graph1.addEdege(1, 0, true);
+  graph1.addEdege(2, 0, true);
+  c(graph1.printGraph());
+  c(' ');
 
-console.log('isComplete (Boolean-True)');
-console.log(graph3.printGraph());
-console.log(graph3.isComplete());
-console.log(' ');
+  c('isComplete (Boolean-False)');
+  c(graph1.printGraph());
+  c(graph1.isComplete());
+  c(' ');
 
-console.log('isMultigraph (Boolean-False)');
-console.log(graph1.printGraph());
-console.log(graph1.isMultigraph());
-console.log(' ');
+  c('isComplete (Boolean-True)');
+  c(graph3.printGraph());
+  c(graph3.isComplete());
+  c(' ');
 
-console.log('isMultigraph (Boolean-True)');
-console.log(graph4.printGraph());
-console.log(graph4.isMultigraph());
-console.log(' ');
+  c('isMultigraph (Boolean-False)');
+  c(graph1.printGraph());
+  c(graph1.isMultigraph());
+  c(' ');
 
-console.log('isSubgraph (Boolean-false)');
-console.log('graph 1');
-console.log(graph1.printGraph());
-console.log('graph 2');
-console.log(graph2.printGraph());
-console.log(graph1.isSubgraph(graph2));
-console.log(' ');
+  c('isMultigraph (Boolean-True)');
+  c(graph4.printGraph());
+  c(graph4.isMultigraph());
+  c(' ');
 
-console.log('isSubgraph (Boolean-True)');
-console.log('graph 2');
-console.log(graph2.printGraph());
-console.log('graph 1');
-console.log(graph1.printGraph());
-console.log(graph2.isSubgraph(graph1));
+  c('isSubgraph (Boolean-false)');
+  c('graph 1');
+  c(graph1.printGraph());
+  c('graph 2');
+  c(graph2.printGraph());
+  c(graph1.isSubgraph(graph2));
+  c(' ');
+
+  c('isSubgraph (Boolean-True)');
+  c('graph 2');
+  c(graph2.printGraph());
+  c('graph 1');
+  c(graph1.printGraph());
+  c(graph2.isSubgraph(graph1));
+})(console.log);
