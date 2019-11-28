@@ -99,6 +99,30 @@ class Graph {
       return false;
     }
   }
+
+  isDirected() {
+    for (let i = 0; i < this.rows; i++) {
+      for (let j = 0; j < this.columns; j++) {
+        if (this.data[i][j] != this.data[j][i]) {
+          return false;
+        }
+      }
+    }
+
+    return true;
+  }
+
+  isIsomorphic(graph) {
+    for (let i = 0; i < this.rows; i++) {
+      for (let j = 0; j < this.columns; j++) {
+        if (this.data[i][j] != graph.data[i][j]) {
+          return false;
+        }
+      }
+    }
+
+    return true;
+  }
 }
 graph2 = new Graph(2);
 graph3 = new Graph(3);
